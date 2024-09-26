@@ -1,7 +1,6 @@
 import React from "react";
 
 class UserInfo extends React.Component {
-
     state = {
         name: "QuyLV",
         address: "HCM",
@@ -24,7 +23,7 @@ class UserInfo extends React.Component {
         console.log(this.state);
         
     }
-
+    
     render() {
         return (
             <div>
