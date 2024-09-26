@@ -3,35 +3,20 @@ import UserInfo from "./UserInfo";
 import DisplayInfo from "./DisplayInfo";
 
 class MyComponent extends React.Component {
-
     state = {
-        name: "QuyLV",
-        address: "HCM",
-        age: 25
-    };
-
-    handleOnChangeName = (event) => {
-        this.setState({
-            name: event.target.value,
-        })
-    }
-    handleOnChangeAge = (event) => {
-        this.setState({
-            age: event.target.value,
-        })
+        listUsers: [
+            {id:1, name:"Quy", age:"25"},
+            {id:2, name:"Minh", age:"27"},
+            {id:3, name:"hihi", age:"Bat tu"},
+        ]
     }
 
-    handleonSubmit = (event) => {
-        event.preventDefault();
-        console.log(this.state);
-        
-    }
     render() {
         return (
             <div>
                 <UserInfo data={this.state}></UserInfo>
                 <br/>   
-                <DisplayInfo name="QuyLV"  age="25" ></DisplayInfo>
+                <DisplayInfo listUsers={this.state.listUsers} ></DisplayInfo>
             </div>
         );
     }
