@@ -1,6 +1,6 @@
 import React from "react";
 import AddUserInfor from "./AddUserInfor";
-import DisplayInfo from "./DisplayInfo";
+import DisplayInfo from "./DisplayInfor";
 
 class MyComponent extends React.Component {
     state = {

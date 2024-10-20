@@ -1,12 +1,13 @@
 import React from "react";
+import './DisplayInfor.scss';
 
-class DisplayInfo extends React.Component {
+class DisplayInfor extends React.Component {
     state = {
         isShow: true,
     }
     handleShowHide = () => {
         this.setState({
-            isShow: ! this.state.isShow
+            isShow: !this.state.isShow
         });
     }
 
@@ -14,9 +15,9 @@ class DisplayInfo extends React.Component {
         const { listUsers } = this.props;
 
         return (
-            <div>
+            <div className="display-infor-container">
                 <div> <button onClick={() => { this.handleShowHide() }}> {this.state.isShow ? 'Hide' : 'show'} list user</button> </div>
-                { this.state.isShow &&
+                {this.state.isShow &&
                     <div>
                         {listUsers.map((user) => {
                             return (
@@ -35,4 +36,4 @@ class DisplayInfo extends React.Component {
     }
 }
 
-export default DisplayInfo;
+export default DisplayInfor;
