@@ -3,9 +3,31 @@ import './DisplayInfor.scss';
 import logo from './../logo.svg';
 
 class DisplayInfor extends React.Component {
-    state = {
-        isShow: true,
+    constructor(props) {
+        console.log("call me constructor: 1");
+
+        super(props);
+
+        this.state = {
+            isShow: true,
+        };
     }
+
+    componentDidMount() {
+        console.log("call me component did mount: 2");
+        setTimeout(() => { document.title = "QuylV" }, 3000);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("call me update", this.props,  prevProps);
+        if(this.props.listUsers !== prevProps.listUsers) {
+            if(this.props.listUsers.length === 5) {
+                alert(' You got 5 user !');
+            }
+        }
+
+    }
+
     handleShowHide = () => {
         this.setState({
             isShow: !this.state.isShow
@@ -14,6 +36,8 @@ class DisplayInfor extends React.Component {
 
     render() {
         const { listUsers } = this.props;
+        console.log("call me render");
+
 
         return (
             <div className="display-infor-container">
